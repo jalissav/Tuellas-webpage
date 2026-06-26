@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="homepage.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tuella's Green Menu</title>
+</head>
+<body>
+    <div class="menubar">
+    <h2>Tuella's</h2>
+    <h2></h2>
+    </div>
+    <main class="page-shell">
+        <section class="hero">
+            <div class="hero-copy">
+                <p class="eyebrow">Welcome</p>
+                <h1>Tuella's Cozy Green Menu</h1>
+                <p class="hero-text">A single-page menu wrapped in leafy tones, soft texture, and drink cards designed for the calm coffee lover.</p>
+            </div>
+        </section>
+
+        <section class="section-break">
+            <div class="section-copy">
+                <h2>Leafy vibes meet delicious drinks</h2>
+                <p>Scroll down to enjoy a little motion, soft greenery, and a relaxing menu reveal at the bottom.</p>
+            </div>
+            <div class="iced-coffee-wrapper">
+                <div class="iced-coffee" id="iced-coffee" aria-hidden="true">
+                    <img src="/imgs/coffee.png" alt="coffee cup" class="coffee-icon">
+                </div>
+            </div>
+        </section>
+
+        <section class="menu-cta">
+            <p class="cta-text">Browse our featured drinks below.</p>
+            <button id="toggle-menu" type="button">Open the menu</button>
+        </section>
+
+        <section class="menu-cards hidden" id="menu-cards">
+            <article class="card">
+                <div class="drink-image iced-latte"></div>
+                <div class="card-copy">
+                    <h3>Iced Matcha Latte</h3>
+                    <p>Bright ceremonial matcha, creamy oat milk, and gentle mint notes for a fresh green sip.</p>
+                </div>
+            </article>
+            <article class="card">
+                <div class="drink-image cold-brew"></div>
+                <div class="card-copy">
+                    <h3>Herbal Cold Brew</h3>
+                    <p>Deep cold brew infused with rosemary and lemon peel, balanced by soft cream.</p>
+                </div>
+            </article>
+            <article class="card">
+                <div class="drink-image green-mocha"></div>
+                <div class="card-copy">
+                    <h3>Green Mocha</h3>
+                    <p>Rich dark chocolate meets matcha sweetness, finished with a sprinkle of pistachio.</p>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <script>
+        const button = document.querySelector('#toggle-menu');
+        const menuSection = document.querySelector('#menu-cards');
+        button.addEventListener('click', () => {
+            const visible = !menuSection.classList.toggle('hidden');
+            button.textContent = visible ? 'Hide the menu' : 'Open the menu';
+        });
+
+        const iced = document.querySelector('#iced-coffee');
+        let scrollTimeout;
+
+        window.addEventListener('scroll', () => {
+            iced.classList.add('spin');
+            clearTimeout(scrollTimeout);
+            scrollTimeout = setTimeout(() => {
+                iced.classList.remove('spin');
+            }, 100);
+        });
+    </script>
+</body>
+</html>
