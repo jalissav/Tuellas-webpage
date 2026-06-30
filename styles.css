@@ -33,7 +33,7 @@ body::before {
     pointer-events: none;
 }
 
-.menubar {
+/* .menubar {
     position: sticky;
     top: 0;
     z-index: 100;
@@ -53,7 +53,7 @@ body::before {
     color: #fffdf7;
     text-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
     letter-spacing: 0.08em;
-}
+} */
 
 .page-shell {
     max-width: 1120px;
